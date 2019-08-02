@@ -22,7 +22,7 @@ function App() {
       style={{
         height: "100vh",
         width: "100vw",
-        background: "blue"
+        background: "navy"
       }}
       index={index}
       onRequestChange={i => {
