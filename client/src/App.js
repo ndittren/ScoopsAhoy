@@ -3,15 +3,16 @@ import ReactDOM from "react-dom";
 import { images } from "./images";
 import { Gallery, GalleryImage } from "react-gesture-gallery";
 
+const startIndx = 0;
 function App() {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(startIndx);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      if (index === 4) {
-        setIndex(0);
+      if (index === images.length - 1) {
+        setIndex(startIndx);
       } else {
-        setIndex(prev => prev + 1);
+        setIndex(index + 1);
       }
     }, 3000);
     return () => clearInterval(timer);
