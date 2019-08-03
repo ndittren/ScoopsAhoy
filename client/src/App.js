@@ -1,43 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { images } from "./images";
-import { Gallery, GalleryImage } from "react-gesture-gallery";
+import React, { Component } from "react";
+import Header from "./HeaderComponent";
+import Carousel from "./Carousel";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const startIndx = 0;
-function App() {
-  const [index, setIndex] = React.useState(startIndx);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      if (index === images.length - 1) {
-        setIndex(startIndx);
-      } else {
-        setIndex(index + 1);
-      }
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [index]);
-
-  return (
-    <Gallery
-      style={{
-        height: "100vh",
-        width: "100vw",
-        background: "navy"
-      }}
-      index={index}
-      onRequestChange={i => {
-        setIndex(i);
-      }}
-    >
-      {images.map(image => (
-        <GalleryImage objectFit="contain" key={image} src={image} />
-      ))}
-    </Gallery>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Header />
+          <Carousel />
+        </div>
+      </Router>
+    );
+  }
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
 
 export default App;
