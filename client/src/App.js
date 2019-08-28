@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "./HeaderComponent";
+import Header from "./Header";
 import Carousel from "./Carousel";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

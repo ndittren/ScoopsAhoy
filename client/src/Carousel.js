@@ -19,21 +19,23 @@ function Carousel() {
   }, [index]);
 
   return (
-    <Gallery
-      style={{
-        height: "100vh",
-        width: "100vw",
-        background: "navy"
-      }}
-      index={index}
-      onRequestChange={i => {
-        setIndex(i);
-      }}
-    >
-      {images.map(image => (
-        <GalleryImage objectFit="contain" key={image} src={image} />
-      ))}
-    </Gallery>
+    <div style={{ display: "inline-block" }} className="carousel">
+      <Gallery
+        style={{
+          height: "100vh",
+          width: "100vw",
+          background: "skyblue"
+        }}
+        index={index}
+        onRequestChange={i => {
+          setIndex(i);
+        }}
+      >
+        {images.map(image => (
+          <GalleryImage objectFit="contain" key={image} src={image} />
+        ))}
+      </Gallery>
+    </div>
   );
 }
 
